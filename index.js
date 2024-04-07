@@ -1,6 +1,6 @@
 //import database from firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, get, onValue, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, get, onValue, ref, push, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 //create a var for realtime database url
 const appSettings = {
@@ -66,6 +66,10 @@ function prependEndorsementToList(endorsement) {
     let newEndorsement = document.createElement("li")
     newEndorsement.textContent = endorsementValue
     
+    newEndorsement.addEventListener("click", function(){
+        let removeExactItem = ref(database, `endorsementList/${endorsementID}`)
+        remove(removeExactItem)
+    })
     //use prepend instead of append
     endoresementListEl.prepend(newEndorsement)
 }
