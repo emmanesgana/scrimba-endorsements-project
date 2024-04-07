@@ -48,13 +48,14 @@ onValue(endorsementListInDB, function(snapshot) {
     }
 })
 
-//create a function to clear inner html
+//create a function to clear endorsementList on load with onValue that are ot in the db
 function clearEndorsementListEl() {
     endoresementListEl.innerHTML = ""
 }
 
+//create a function to clear inner html
 function clearTetxtEl() {
-    textEl.innerHTML = ""
+    textEl.value = ""
 }
 
 function prependEndorsementToList(endorsement) {
