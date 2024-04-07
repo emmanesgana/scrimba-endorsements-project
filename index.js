@@ -58,12 +58,14 @@ function clearTetxtEl() {
     textEl.value = ""
 }
 
+//create a function that add the comment to the top of the list
 function prependEndorsementToList(endorsement) {
     let endorsementID = endorsement[0]
     let endorsementValue = endorsement[1]
 
     let newEndorsement = document.createElement("li")
     newEndorsement.textContent = endorsementValue
-
+    
+    //use prepend instead of append
     endoresementListEl.prepend(newEndorsement)
 }
