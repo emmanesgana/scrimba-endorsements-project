@@ -7,7 +7,7 @@ const appSettings = {
     databaseURL: "https://playground-6c6ea-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
 
-//create a var to initialize firebase realtime db
+//create a var to connect appSettings db to initializeApp to fetch data
 const app = initializeApp(appSettings)
 //create a var to assign app to getDatabase
 const database = getDatabase(app)
@@ -28,7 +28,7 @@ buttonEl.addEventListener("click", function() {
     clearTetxtEl()
 })
 
-//create onValue to check if the database is empty or not
+//create onValue to display the list of items from the database
 onValue(endorsementListInDB, function(snapshot) {
     //create a condition to check if there are items in the db
     if (snapshot.exists()) {
